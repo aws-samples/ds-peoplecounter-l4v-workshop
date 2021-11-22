@@ -1,0 +1,419 @@
+################################################################################
+# Copyright (c) 2018-2020, NVIDIA CORPORATION. All rights reserved.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+################################################################################
+
+[sensor0]
+enable=1
+type=Camera
+id=RYAN_FRONT_RING_FLOOD
+location=45.293701447;-75.8303914499;48.1557479338
+description=Ryan's Front Yard Ring Flood Camera
+coordinate=5.2;10.1;11.2
+
+[sensor1]
+enable=0
+type=Camera
+id=HWY_20_AND_LOCUST__WBA__4_11_2018_4_59_59_379_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor2]
+enable=0
+type=Camera
+id=HWY_20_AND_DEVON__WBA__4_11_2018_4_59_59_134_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor3]
+enable=0
+type=Camera
+id=HWY_20_AND_LOCUST__4_11_2018_4_59_59_320_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor4]
+enable=0
+type=Camera
+id=HWY_20_AND_WACKER__WBA__4_11_2018_4_59_59_550_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor5]
+enable=0
+type=Camera
+id=HWY_20_AND_WACKER__EBA__4_11_2018_4_59_59_543_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor6]
+enable=0
+type=Camera
+id=HWY_20_AND_DEVON__WBA__4_11_2018_4_59_59_134_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor7]
+enable=0
+type=Camera
+id=HWY_20_AND_BRYANT__WB__4_11_2018_4_59_59_485_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor8]
+enable=0
+type=Camera
+id=HWY_20_AND_DEVON__EB__4_11_2018_4_59_59_728_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor9]
+enable=0
+type=Camera
+id=HWY_20_AND_DEVON__EBA__4_11_2018_4_59_59_793_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor10]
+enable=0
+type=Camera
+id=HWY_20_AND_JFK__WB__4_11_2018_4_59_59_450_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor11]
+enable=0
+type=Camera
+id=HWY_20_AND_JFK__WBA__4_11_2018_4_59_59_860_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+
+[sensor12]
+enable=0
+type=Camera
+id=HWY_20_AND_JFK__EB__4_11_2018_4_59_59_872_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor13]
+enable=0
+type=Camera
+id=HWY_20_AND_UNIVERSITY__WB__4_11_2018_4_59_59_308_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor14]
+enable=0
+type=Camera
+id=HWY_20_AND_UNIVERSITY__EB__4_11_2018_4_59_59_734_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor15]
+enable=0
+type=Camera
+id=HWY_20_AND_CENTURY__WB__4_11_2018_5_00_00_072_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor16]
+enable=0
+type=Camera
+id=HWY_20_AND_DEVON__EB__4_11_2018_4_59_59_728_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor17]
+enable=0
+type=Camera
+id=HWY_20_AND_WACKER__WB__4_11_2018_4_59_57_927_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor18]
+enable=0
+type=Camera
+id=HWY_20_AND_WACKER__EB__4_11_2018_4_59_59_473_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[sensor19]
+enable=0
+type=Camera
+id=HWY_20_AND_LOCUST__HILL_EB_26-76__4_11_2018_4_59_59_433_AM_UTC-07_00
+location=45.293701447;-75.8303914499;48.1557479338
+description=Aisle Camera
+coordinate=5.2;10.1;11.2
+
+[place0]
+enable=1
+id=0
+type=Single Family Home
+name=Ryan Vanderwerf House
+location=30.5142644;-97.6296876;17
+coordinate=1.0;2.0;3.0
+place-sub-field1=Round Rock
+place-sub-field2=TX
+place-sub-field3=USA
+
+[place1]
+enable=0
+id=1
+type=intersection/road
+name=HWY_20_AND_LOCUST__WBA
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place2]
+enable=0
+id=2
+type=intersection/road
+name=HWY_20_AND_DEVON__WBA
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place3]
+enable=0
+id=3
+type=intersection/road
+name=HWY_20_AND_LOCUST
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place4]
+enable=0
+id=4
+type=intersection/road
+name=HWY_20_AND_WACKER__WBA
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place5]
+enable=0
+id=5
+type=intersection/road
+name=HWY_20_AND_WACKER__EBA
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place6]
+enable=0
+id=6
+type=intersection/road
+name=HWY_20_AND_DEVON__WBA
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place7]
+enable=0
+id=7
+type=intersection/road
+name=HWY_20_AND_BRYANT__WB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place8]
+enable=0
+id=8
+type=intersection/road
+name=HWY_20_AND_DEVON__EB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place9]
+enable=0
+id=9
+type=intersection/road
+name=HWY_20_AND_DEVON__EBA
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place10]
+enable=0
+id=10
+type=intersection/road
+name=HWY_20_AND_JFK__WB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place11]
+enable=0
+id=11
+type=intersection/road
+name=HWY_20_AND_JFK__WBA
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place12]
+enable=0
+id=12
+type=intersection/road
+name=HWY_20_AND_JFK__EB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place13]
+enable=0
+id=13
+type=intersection/road
+name=HWY_20_AND_UNIVERSITY__WB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place14]
+enable=0
+id=14
+type=intersection/road
+name=HWY_20_AND_UNIVERSITY__EB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place15]
+enable=0
+id=15
+type=intersection/road
+name=HWY_20_AND_CENTURY__WB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place16]
+enable=0
+id=16
+type=intersection/road
+name=HWY_20_AND_DEVON__EB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place17]
+enable=0
+id=17
+type=intersection/road
+name=HWY_20_AND_WACKER__WB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place18]
+enable=0
+id=18
+type=intersection/road
+name=HWY_20_AND_WACKER__EB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+[place19]
+enable=0
+id=19
+type=intersection/road
+name=HWY_20_AND_LOCUST__HILL_EB
+location=30.32;-40.55;100.0
+coordinate=1.0;2.0;3.0
+place-sub-field1=C_127_158
+place-sub-field2=Lane 1
+place-sub-field3=P1
+
+
+[analytics0]
+enable=1
+id=AWSNVIDIAGTCDEMO
+description=Ryan Home Occupancy Counter
+source=Ring
+version=1.0
+
+[analytics1]
+enable=0
+id=XYZ
+#description=Vehicle Detection and License Plate Recognition 1
+source=OpenALR
+version=1.0
+
+
