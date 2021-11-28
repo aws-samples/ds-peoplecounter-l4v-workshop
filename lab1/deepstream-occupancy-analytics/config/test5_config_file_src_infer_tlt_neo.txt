@@ -44,7 +44,7 @@ nvbuf-memory-type=0
 enable=0
 #Type - 1=CameraV4L2 2=URI 3=MultiURI
 type=3
-uri=file:///opt/nvidia/deepstream/deepstream/sources/apps/sample_apps/demo/out.mp4
+uri=file:///opt/nvidia/deepstream/deepstream-6.0/sources/apps/sample_apps/deepstream-occupancy-analytics/ryanhouse-ds-ringvideo.mp4
 num-sources=1
 gpu-id=0
 nvbuf-memory-type=0
