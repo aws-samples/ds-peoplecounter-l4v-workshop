@@ -64,7 +64,7 @@ if cap.isOpened():
     print("shape="+str(img.shape))
     response = stub.DetectAnomalies(
         pb2.DetectAnomaliesRequest(
-            model_component="ComponentCircuitBoard",
+            model_component="alienmodel",
             bitmap=pb2.Bitmap(
                 width=w,
                 height=h,
