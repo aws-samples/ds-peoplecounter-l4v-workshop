@@ -3,8 +3,10 @@ import time
 import numpy as np
 import cv2
 import grpc
-from inference_server_pb2_grpc import InferenceServerStub
-import inference_server_pb2 as pb2 
+import edge_agent_pb2 as pb2 
+from edge_agent_pb2_grpc import ( 
+    EdgeAgentStub
+)
 
 
 
@@ -44,22 +46,23 @@ if cap.isOpened():
     cv2.imwrite("frame.bmp",img)
     cap.release()
     print("start client")
-    channel = grpc.insecure_channel("unix-abstract:aws.lookoutvision.inference-server")
-    print("channel set")
-    stub = InferenceServerStub(channel)
-    h, w, c = img.shape
-    print("shape="+str(img.shape))
-    response = stub.DetectAnomalies(
-        pb2.DetectAnomaliesRequest(
-            model_component="ComponentCircuitBoard",
-            bitmap=pb2.Bitmap(
-                width=w,
-                height=h,
-                byte_data=bytes(img.tobytes())
-                ) 
-            )
-    )
-    print(response)
+    #channel = grpc.insecure_channel("unix-abstract:aws.lookoutvision.inference-server")
+    with grpc.insecure_channel("unix:///tmp/aws.iot.lookoutvision.EdgeAgent.sock") as channel:
+        print("channel set")
+        stub = EdgeAgentStub(channel)
+        h, w, c = img.shape
+        print("shape="+str(img.shape))
+        response = stub.DetectAnomalies(
+            pb2.DetectAnomaliesRequest(
+                model_component="ComponentCircuitBoard",
+                bitmap=pb2.Bitmap(
+                    width=w,
+                    height=h,
+                    byte_data=bytes(img.tobytes())
+                    ) 
+                )
+        )
+        print(response)
 
 
 else:
