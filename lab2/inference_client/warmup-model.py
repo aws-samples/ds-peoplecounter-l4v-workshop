@@ -7,4 +7,4 @@ from edge_agent_pb2_grpc import (
 
 channel = grpc.insecure_channel("unix:///tmp/aws.iot.lookoutvision.EdgeAgent.sock")
 stub = EdgeAgentStub(channel)
-stub.StartModel(pb2.StartModelRequest(model_component="l4v-blog"))
+stub.StartModel(pb2.StartModelRequest(model_component="ComponentCircuitBoard"))
