@@ -30,42 +30,44 @@
 
 using namespace nvinfer1;
 
-class NeoDLRLayer : public nvinfer1::IPluginV2Ext {
- public:
-  NeoDLRLayer(const std::string& model_path);
-  NeoDLRLayer(const void* data, size_t length);
+class NeoDLRLayer : public nvinfer1::IPluginV2Ext
+{
+public:
+  NeoDLRLayer(const std::string &model_path);
+  NeoDLRLayer(const void *data, size_t length);
   ~NeoDLRLayer();
 
   // IPluginV2 methods
-  const char* getPluginType() const noexcept override;
-  const char* getPluginVersion() const noexcept override;
+  const char *getPluginType() const noexcept override;
+  const char *getPluginVersion() const noexcept override;
   int getNbOutputs() const noexcept override;
-  Dims getOutputDimensions(int index, const Dims* inputs, int nbInputDims) noexcept override;
+  Dims getOutputDimensions(int index, const Dims *inputs, int nbInputDims) noexcept override;
   bool supportsFormat(DataType type, PluginFormat format) const noexcept override;
   size_t getWorkspaceSize(int maxBatchSize) const noexcept override;
-  int enqueue(int batchSize, const void* const* inputs, void** outputs, void* workspace,
-              cudaStream_t stream) noexcept override;
+  int enqueue(
+      int batchSize, void const *const *inputs, void *const *outputs,
+      void *workspace, cudaStream_t stream) noexcept override;
   int initialize() noexcept override;
   void terminate() noexcept override;
   size_t getSerializationSize() const noexcept override;
-  void serialize(void* buffer) const noexcept override;
+  void serialize(void *buffer) const noexcept override;
   void destroy() noexcept override;
-  void setPluginNamespace(const char* libNamespace) noexcept override;
-  const char* getPluginNamespace() const noexcept override;
+  void setPluginNamespace(const char *libNamespace) noexcept override;
+  const char *getPluginNamespace() const noexcept override;
 
   // IPluginV2Ext methods
-  nvinfer1::DataType getOutputDataType(int index, const nvinfer1::DataType* inputType,
+  nvinfer1::DataType getOutputDataType(int index, const nvinfer1::DataType *inputType,
                                        int nbInputs) const noexcept override;
-  bool isOutputBroadcastAcrossBatch(int outputIndex, const bool* inputIsBroadcasted,
+  bool isOutputBroadcastAcrossBatch(int outputIndex, const bool *inputIsBroadcasted,
                                     int nbInputs) const noexcept override;
   bool canBroadcastInputAcrossBatch(int inputIndex) const noexcept override;
-  void configurePlugin(const Dims* inputDims, int nbInputs, const Dims* outputDims, int nbOutputs,
-                       const DataType* inputTypes, const DataType* outputTypes,
-                       const bool* inputIsBroadcast, const bool* outputIsBroadcast,
+  void configurePlugin(const Dims *inputDims, int nbInputs, const Dims *outputDims, int nbOutputs,
+                       const DataType *inputTypes, const DataType *outputTypes,
+                       const bool *inputIsBroadcast, const bool *outputIsBroadcast,
                        PluginFormat floatFormat, int maxBatchSize) noexcept override;
-  IPluginV2Ext* clone() const noexcept override;
+  IPluginV2Ext *clone() const noexcept override;
 
- private:
+private:
   std::string namespace_;
   std::string model_path_;
   // DLR info
@@ -82,38 +84,38 @@ class NeoDLRLayer : public nvinfer1::IPluginV2Ext {
 
   // libdlr.so
   int LoadDLRInfo();
-  void* libdlr_;
+  void *libdlr_;
 
-  typedef void* DLRModelHandle;
+  typedef void *DLRModelHandle;
   DLRModelHandle model_;
-  int (*CreateDLRModel)(DLRModelHandle* handle, const char* model_path, int dev_type, int dev_id);
-  int (*DeleteDLRModel)(DLRModelHandle* handle);
-  int (*RunDLRModel)(DLRModelHandle* handle);
-  int (*GetDLRNumInputs)(DLRModelHandle* handle, int* num_inputs);
-  int (*GetDLRNumWeights)(DLRModelHandle* handle, int* num_weights);
-  int (*GetDLRInputName)(DLRModelHandle* handle, int index, const char** input_name);
-  int (*GetDLRInputType)(DLRModelHandle* handle, int index, const char** input_type);
-  int (*GetDLRWeightName)(DLRModelHandle* handle, int index, const char** weight_name);
-  int (*SetDLRInput)(DLRModelHandle* handle, const char* name, const int64_t* shape,
-                     const void* input, int dim);
-  int (*SetDLRInputTensor)(DLRModelHandle* handle, const char* name, void* tensor);
-  int (*GetDLRInput)(DLRModelHandle* handle, const char* name, void* input);
-  int (*GetDLRInputShape)(DLRModelHandle* handle, int index, int64_t* shape);
-  int (*GetDLRInputSizeDim)(DLRModelHandle* handle, int index, int64_t* size, int* dim);
-  int (*GetDLROutputShape)(DLRModelHandle* handle, int index, int64_t* shape);
-  int (*GetDLROutput)(DLRModelHandle* handle, int index, void* out);
-  int (*GetDLROutputPtr)(DLRModelHandle* handle, int index, const void** out);
-  int (*GetDLROutputTensor)(DLRModelHandle* handle, int index, void* tensor);
-  int (*GetDLRNumOutputs)(DLRModelHandle* handle, int* num_outputs);
-  int (*GetDLROutputSizeDim)(DLRModelHandle* handle, int index, int64_t* size, int* dim);
-  int (*GetDLROutputType)(DLRModelHandle* handle, int index, const char** output_type);
-  int (*GetDLRHasMetadata)(DLRModelHandle* handle, bool* has_metadata);
-  int (*GetDLROutputName)(DLRModelHandle* handle, const int index, const char** name);
-  int (*GetDLROutputIndex)(DLRModelHandle* handle, const char* name, int* index);
-  int (*GetDLROutputByName)(DLRModelHandle* handle, const char* name, void* out);
-  const char* (*DLRGetLastError)();
-  int (*GetDLRBackend)(DLRModelHandle* handle, const char** name);
-  int (*GetDLRDeviceType)(const char* model_path);
+  int (*CreateDLRModel)(DLRModelHandle *handle, const char *model_path, int dev_type, int dev_id);
+  int (*DeleteDLRModel)(DLRModelHandle *handle);
+  int (*RunDLRModel)(DLRModelHandle *handle);
+  int (*GetDLRNumInputs)(DLRModelHandle *handle, int *num_inputs);
+  int (*GetDLRNumWeights)(DLRModelHandle *handle, int *num_weights);
+  int (*GetDLRInputName)(DLRModelHandle *handle, int index, const char **input_name);
+  int (*GetDLRInputType)(DLRModelHandle *handle, int index, const char **input_type);
+  int (*GetDLRWeightName)(DLRModelHandle *handle, int index, const char **weight_name);
+  int (*SetDLRInput)(DLRModelHandle *handle, const char *name, const int64_t *shape,
+                     const void *input, int dim);
+  int (*SetDLRInputTensor)(DLRModelHandle *handle, const char *name, void *tensor);
+  int (*GetDLRInput)(DLRModelHandle *handle, const char *name, void *input);
+  int (*GetDLRInputShape)(DLRModelHandle *handle, int index, int64_t *shape);
+  int (*GetDLRInputSizeDim)(DLRModelHandle *handle, int index, int64_t *size, int *dim);
+  int (*GetDLROutputShape)(DLRModelHandle *handle, int index, int64_t *shape);
+  int (*GetDLROutput)(DLRModelHandle *handle, int index, void *out);
+  int (*GetDLROutputPtr)(DLRModelHandle *handle, int index, const void **out);
+  int (*GetDLROutputTensor)(DLRModelHandle *handle, int index, void *tensor);
+  int (*GetDLRNumOutputs)(DLRModelHandle *handle, int *num_outputs);
+  int (*GetDLROutputSizeDim)(DLRModelHandle *handle, int index, int64_t *size, int *dim);
+  int (*GetDLROutputType)(DLRModelHandle *handle, int index, const char **output_type);
+  int (*GetDLRHasMetadata)(DLRModelHandle *handle, bool *has_metadata);
+  int (*GetDLROutputName)(DLRModelHandle *handle, const int index, const char **name);
+  int (*GetDLROutputIndex)(DLRModelHandle *handle, const char *name, int *index);
+  int (*GetDLROutputByName)(DLRModelHandle *handle, const char *name, void *out);
+  const char *(*DLRGetLastError)();
+  int (*GetDLRBackend)(DLRModelHandle *handle, const char **name);
+  int (*GetDLRDeviceType)(const char *model_path);
 };
 
-#endif  // __NEO_DLR_PLUGIN__
+#endif // __NEO_DLR_PLUGIN__
