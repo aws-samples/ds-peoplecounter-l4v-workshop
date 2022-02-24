@@ -22,11 +22,14 @@ extern "C" bool NvDsInferNeoDlrCudaEngineGet(nvinfer1::IBuilder *const builder,
                                              nvinfer1::DataType dataType,
                                              nvinfer1::ICudaEngine *&cudaEngine)
 {
-  nvinfer1::INetworkDefinition *network = builder->createNetwork();
+  nvinfer1::INetworkDefinition *network = builder->createNetworkV2(0);
 
   // TODO: Edit input shapes to match your model.
-  nvinfer1::ITensor *input =
-      network->addInput("data", nvinfer1::DataType::kFLOAT, nvinfer1::DimsCHW(3, PICTURE_HEIGHT, PICTURE_WIDTH));
+  // nvinfer1::ITensor *input =
+  //     network->addInput("data", nvinfer1::DataType::kFLOAT, nvinfer1::DimsCHW(3, PICTURE_HEIGHT, PICTURE_WIDTH));
+  nvinfer1::ITensor* input =
+      network->addInput("data", nvinfer1::DataType::kFLOAT,
+          nvinfer1::Dims3{3, PICTURE_HEIGHT, PICTURE_WIDTH});
   std::vector<nvinfer1::ITensor *> inputs = {input};
 
   // Create DLR plugin. Set path to compiled model (folder containing .json, .params, .so, libdlr.so)
@@ -45,8 +48,18 @@ extern "C" bool NvDsInferNeoDlrCudaEngineGet(nvinfer1::IBuilder *const builder,
     output->setName(output_name.c_str());
     network->markOutput(*output);
   }
-
-  cudaEngine = builder->buildCudaEngine(*network);
+  std::cout << "Building the TensorRT Engine..." << std::endl;
+  nvinfer1::IBuilderConfig *config = builder->createBuilderConfig();
+  nvinfer1::ICudaEngine * engine = builder->buildEngineWithConfig(*network, *config);
+  if (engine) {
+      std::cout << "Building complete!" << std::endl;
+  } else {
+      std::cerr << "Building engine failed!" << std::endl;
+  }
+  // destroy
   network->destroy();
+  delete config;
+
+  cudaEngine = engine;
   return true;
 }

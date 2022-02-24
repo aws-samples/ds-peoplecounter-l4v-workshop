@@ -180,7 +180,7 @@ config-file=primary_infer_neo.txt
 #config-file=infer_primary_temp.txt
 
 [tracker]
-enable=1
+enable=0
 tracker-width=640
 tracker-height=480
 ll-lib-file=/opt/nvidia/deepstream/deepstream/lib/libnvds_nvdcf.so
@@ -190,6 +190,22 @@ ll-config-file=tracker_config.yml
 gpu-id=0
 #enable-batch-process applicable to DCF only
 enable-batch-process=0
+
+[tracker]
+enable=1
+# For NvDCF and DeepSORT tracker, tracker-width and tracker-height must be a multiple of 32, respectively
+tracker-width=640
+tracker-height=480
+ll-lib-file=/opt/nvidia/deepstream/deepstream-6.0/lib/libnvds_nvmultiobjecttracker.so
+# ll-config-file required to set different tracker types
+# ll-config-file=../../../../../samples/configs/deepstream-app/config_tracker_IOU.yml
+ll-config-file=../../../../../samples/configs/deepstream-app/config_tracker_NvDCF_perf.yml
+# ll-config-file=../../../../../samples/configs/deepstream-app/config_tracker_NvDCF_accuracy.yml
+# ll-config-file=../../../../../samples/configs/deepstream-app/config_tracker_DeepSORT.yml
+gpu-id=0
+enable-batch-process=0
+enable-past-frame=1
+display-tracking-id=1
 
 
 [nvds-analytics]
