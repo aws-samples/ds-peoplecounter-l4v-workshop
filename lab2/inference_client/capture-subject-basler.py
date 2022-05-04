@@ -2,11 +2,6 @@
 import time
 import numpy as np
 import cv2
-import grpc
-import edge_agent_pb2 as pb2 
-from edge_agent_pb2_grpc import ( 
-    EdgeAgentStub
-)
 from pypylon import pylon
 import platform
 import sys
